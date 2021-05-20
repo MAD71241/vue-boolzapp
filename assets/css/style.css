@@ -4,6 +4,10 @@ body {
     background-image: url(../img/mine.jpg);
 }
 
+.no-padding {
+    padding: 0;
+}
+
 .bg-wagrey {
     background-color: #EAEAEA;
 }
@@ -24,26 +28,43 @@ body {
     border-right: 1px solid lightgrey;
 }
 
-.sidebar-top {
-
+.searchbox {
+    height: 50px;
+    width: 100%;
 }
 
-.sidebar-notify {
+.searchbox input {
+    width: 80%;
+    height: 30px;
+}
 
+.notify {
+    height: 80px;
+    width: 100%;
 }
 
 /* Regole Chatbox */
 
+.chat-header, .sidebar-header {
+    height: 100px;
+    width: 100%;
+}
+
+
 .chat-body {
     height: 672px;
-    background-color: red;
+    overflow-y: scroll;
 }
 
 .chat-input {
-
+    width: 100%;
+    height: 80px;
 }
 
 .chat-input input {
-
+    outline: none;
+    width: 70%;
+    height: 40px;
+    padding: 15px;
 }
 /* Regole Footer */
