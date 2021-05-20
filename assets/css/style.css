@@ -116,7 +116,6 @@ body {
 
 .chat-body {
     height: 672px;
-    overflow-y: scroll;
 }
 
 .chat-input {
@@ -139,4 +138,11 @@ body {
 .chat-input .fas:hover, .chat-input .far:hover {
     cursor: pointer;
 }
+
+.chat-container {
+    height: 2000px;
+    background-color: red;
+    overflow-y: scroll;
+}
+
 /* Regole Footer */
