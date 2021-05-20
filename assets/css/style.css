@@ -124,6 +124,7 @@ body {
 
 .chat-body {
     height: 672px;
+    flex-wrap: wrap
 }
 
 .chat-input {
@@ -150,7 +151,7 @@ body {
 
 .chat-container {
     overflow-y: scroll;
-    height: 1000px;
+    height: calc(100% - 100px);
     background-image: url(../img/mine.jpg);
     padding: 25px;
     position: relative;
