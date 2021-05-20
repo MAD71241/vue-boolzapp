@@ -150,8 +150,35 @@ body {
 
 .chat-container {
     overflow-y: scroll;
+    height: 1000px;
     background-image: url(../img/mine.jpg);
     padding: 25px;
+    position: relative;
 }
 
-/* Regole Footer */
+.bubble-container-sent {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.bubble-container-received {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.chat-bubble-sent {
+    text-align: right;
+    padding: 5px;
+    background-color: #D5F9BA;
+    margin: 10px 0;
+    display: inline-block;
+    justify-self: flex-end;
+}
+
+.chat-bubble-received {
+    text-align: left;
+    padding: 5px;
+    background-color: white;
+    margin: 10px 0;
+    display: inline-block;
+}
