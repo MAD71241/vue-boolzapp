@@ -4,7 +4,7 @@ Visualizzazione dinamica della lista contatti: tramite la direttiva v-for, visua
 */
 
 
-const app = new Vue ({
+const app = new Vue({
     el: "#boolz",
 
     data: {
@@ -53,7 +53,7 @@ const app = new Vue ({
                     }
                 ],
             },
-        ​
+
             {
                 name: 'Samuele',
                 avatar: '_3',
@@ -93,6 +93,29 @@ const app = new Vue ({
                     }
                 ],
             },
-        ]
-    }
+            {
+                name: 'Daniel',
+                avatar: '_5',
+                visible: true,
+                messages: [
+                    {
+                        date: '10/01/2020 15:30:55',
+                        text: 'Hai portato a spasso il cane?',
+                        status: 'sent'
+                    },
+                    {
+                        date: '10/01/2020 15:50:00',
+                        text: 'Ricordati di dargli da mangiare',
+                        status: 'sent'
+                    },
+                    {
+                        date: '10/01/2020 16:15:22',
+                        text: 'Tutto fatto!',
+                        status: 'received'
+                    }
+                ],
+            }
+        ],
+
+    },
 })
