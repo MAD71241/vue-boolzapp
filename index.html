@@ -20,11 +20,24 @@
     <title>Boolzapp</title>
   </head>
   <body>
-
+    <div class="header bg-deeperocean"></div>
     <div class="container">
       <div class="row">
         <div class="sidebar col-4 no-padding">
-          <div class="sidebar-header bg-wagrey"></div>
+          <div class="sidebar-header bg-wagrey d-flex flex-row align-items-center justify-content-between">
+            <div class="sidebar-header-left d-flex align-items-center">
+              <!-- utente -->
+              <img src="./assets/img/_io.jpg" alt="user avatar" class="user-avatar">
+              <!-- nome utente -->
+              <h5>Nome Utente</h5>
+            </div>
+            <!-- tre icone -->
+            <div class="sidebar-header-right d-flex justify-content-center align-items-center text-grey">
+              <i class="fas fa-circle-notch"></i>
+              <i class="fas fa-comment-alt"></i>
+              <i class="fas fa-ellipsis-v"></i>
+            </div>
+          </div>
           <div class="notify bg-waocean"></div>
           <div class="searchbox bg-wagrey d-flex justify-content-center align-items-center">
             <input type="text" placeholder="search someone">

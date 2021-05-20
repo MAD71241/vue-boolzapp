@@ -8,12 +8,46 @@ body {
     padding: 0;
 }
 
+.text-grey {
+    color: grey;
+}
+
 .bg-wagrey {
     background-color: #EAEAEA;
 }
 
 .bg-waocean {
     background-color: #8EDAFC;
+}
+
+.bg-deeperocean {
+    background-color: #009688;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 125px;
+    width: 100%;
+}
+.sidebar-header-left {
+    margin-left: 15px;
+}
+
+.sidebar-header-right {
+    margin-right: 15px;
+    font-size: 20px;
+}
+
+.sidebar-header-right .fas, .sidebar-header-right .far {
+    padding: 0 10px;
+}
+
+.user-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
 }
 
 .container .row {
