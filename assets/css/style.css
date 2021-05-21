@@ -48,12 +48,12 @@ body {
     margin-left: 15px;
 }
 
-.sidebar-header-right {
+.sidebar-header-right, .icon-container {
     margin-right: 15px;
     font-size: 20px;
 }
 
-.sidebar-header-right .fas, .sidebar-header-right .far {
+.sidebar-header-right .fas, .sidebar-header-right .far, .icon-container .fas, .icon-container .far {
     padding: 0 10px;
 }
 
@@ -197,7 +197,7 @@ body {
 
 .chat-bubble-sent {
     text-align: right;
-    padding: 5px;
+    padding: 10px;
     background-color: #D5F9BA;
     margin: 10px 0;
     display: inline-block;
@@ -207,7 +207,7 @@ body {
 
 .chat-bubble-received {
     text-align: left;
-    padding: 5px;
+    padding: 10px;
     background-color: white;
     margin: 10px 0;
     display: inline-block;
