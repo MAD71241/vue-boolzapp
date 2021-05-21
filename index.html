@@ -10,6 +10,7 @@
       integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ"
       crossorigin="anonymous"
     />
+    <link rel="shortcut icon" href="./assets/img/favicon-64x64.ico" type="image/x-icon">
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
@@ -136,7 +137,7 @@
           <div class="chat-container">
             <!-- insert chat here -->
             <div class="bubble-container-sent" v-for="message in contacts[counter].messages" v-if="message.status == 'sent'" >
-              <p class="chat-bubble-sent">{{message.text}}<br>
+              <p class="chat-bubble-sent">{{message.text}}<i class="fas fa-angle-down text-grey"></i><br>
                 <span class="date">{{message.date}}</span>
               </p>
             </div>

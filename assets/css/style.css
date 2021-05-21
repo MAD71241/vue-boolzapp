@@ -57,6 +57,18 @@ body {
     padding: 0 10px;
 }
 
+.chat-bubble-received:hover .fa-angle-down, .chat-bubble-sent:hover .fa-angle-down {
+    display: inline;
+}
+
+.fa-angle-down {
+    display: none;
+    position: absolute;
+    padding-left: 5px;
+    top: 0;
+    right: 5px;
+}
+
 .user-avatar, .contact-image  {
     width: 60px;
     height: 60px;
@@ -203,6 +215,7 @@ body {
     display: inline-block;
     justify-self: flex-end;
     border-radius: 5px;
+    position: relative;
 }
 
 .chat-bubble-received {
@@ -212,6 +225,7 @@ body {
     margin: 10px 0;
     display: inline-block;
     border-radius: 5px;
+    position: relative;
 }
 
 .contacts {
