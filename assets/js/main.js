@@ -119,4 +119,10 @@ const app = new Vue({
         ],
 
     },
+
+    methods: {
+        userSelector (index) {
+            return app.currentContact = index;
+        }
+    }
 })

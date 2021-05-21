@@ -104,7 +104,7 @@
             <input type="text" placeholder="cerca o inizia una nuova chat" class="search-input" />
           </div>
           <div class="contacts">
-            <div class="contact-me d-flex flex-row justify-content-start" v-for="user in contacts" >
+            <div class="contact-me d-flex flex-row justify-content-start" v-for="user in contacts" @click="userSelector(user)">
               <img :src="'./assets/img/'+ user.avatar +'.jpg'" alt="" class="contact-image">
               <h5>{{ user.name }}</h5>
             </div>
@@ -122,8 +122,8 @@
         >
           <div class="chat-header bg-wagrey d-flex justify-content-between">
             <div class="chat-header-left d-flex justify-content-center align-items-center">
-              <img src="./assets/img/_1.jpg" alt="" class="contact-image">
-              <h5>nome utente</h5>
+              <img :src="'./assets/img/' + currentContact.avatar + '.jpg'" alt="" class="contact-image">
+              <h5>{{currentContact.name}}</h5>
             </div>
             <div class="icon-container d-flex justify-content-center align-items-center text-grey">
               <i class="fas fa-search"></i>
