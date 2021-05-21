@@ -132,11 +132,24 @@ const app = new Vue({
         sendMessage () {
             console.log("Sto funzionando");
             const mySentMessage = new Object ();
-            mySentMessage.date = '10/01/2020 16:15:22'
+            const today = new Date();
+            var now = dayjs();
+            mySentMessage.date = now;
             mySentMessage.text = app.newMessage;
             mySentMessage.status = "sent";
             app.contacts[app.counter].messages.push(mySentMessage);
             app.newMessage = "";
-        }
+            setTimeout(app.autoReply, 1000);
+        },
+        autoReply () {
+            const myReceivedMessage = new Object ();
+            const today = new Date();
+            var now = dayjs();
+            myReceivedMessage.date = now;
+            myReceivedMessage.text = "Ok";
+            myReceivedMessage.status = "received";
+            app.contacts[app.counter].messages.push(myReceivedMessage);
+        },
+
     }
 })
