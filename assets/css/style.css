@@ -65,6 +65,7 @@ body {
 
 .contact-image {
     align-self: center;
+    margin-left: 15px;
 }
 
 .contact-me h5 {
@@ -116,8 +117,9 @@ body {
 }
 
 .searchbox input {
-    width: 80%;
+    width: 90%;
     height: 30px;
+    border: none;
 }
 
 .notify {
@@ -125,13 +127,28 @@ body {
     width: 100%;
 }
 
+.input-icon {
+    position: absolute;
+    left: 25px;
+    color: grey;
+}
+
+.search-input {
+    padding-left: 35px;
+}
+
 /* Regole Chatbox */
 
 .chat-header, .sidebar-header {
     height: 100px;
     width: 100%;
+    border-bottom: 1px solid lightgrey;
 }
 
+.contact-me:hover {
+    background-color: lightgrey;
+    cursor: pointer;
+}
 
 .chat-body {
     height: 672px;
@@ -185,6 +202,7 @@ body {
     margin: 10px 0;
     display: inline-block;
     justify-self: flex-end;
+    border-radius: 5px;
 }
 
 .chat-bubble-received {
@@ -193,6 +211,7 @@ body {
     background-color: white;
     margin: 10px 0;
     display: inline-block;
+    border-radius: 5px;
 }
 
 .contacts {

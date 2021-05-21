@@ -100,10 +100,11 @@
               align-items-center
             "
           >
-            <input type="text" placeholder="cerca o inizia una nuova chat" />
+          <i class="input-icon fas fa-search"></i>
+            <input type="text" placeholder="cerca o inizia una nuova chat" class="search-input" />
           </div>
           <div class="contacts">
-            <div class="contact-me d-flex flex-row justify-content-start" v-for="(user) in contacts" >
+            <div class="contact-me d-flex flex-row justify-content-start" v-for="user in contacts" >
               <img :src="'./assets/img/'+ user.avatar +'.jpg'" alt="" class="contact-image">
               <h5>{{ user.name }}</h5>
             </div>

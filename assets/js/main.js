@@ -8,6 +8,7 @@ const app = new Vue({
     el: "#boolz",
 
     data: {
+        currentContact: 0,
         contacts: [
             {
                 name: 'Michele',
