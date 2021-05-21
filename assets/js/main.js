@@ -8,6 +8,7 @@ const app = new Vue({
     el: "#boolz",
 
     data: {
+        newMessage: "",
         currentContact: "",
         counter: 0,
         contacts: [
@@ -127,7 +128,15 @@ const app = new Vue({
         },
         messageSelector (index) {
             app.counter = index;
+        },
+        sendMessage () {
+            console.log("Sto funzionando");
+            const mySentMessage = new Object ();
+            mySentMessage.date = '10/01/2020 16:15:22'
+            mySentMessage.text = app.newMessage;
+            mySentMessage.status = "sent";
+            app.contacts[app.counter].messages.push(mySentMessage);
+            app.newMessage = "";
         }
     }
 })
-//contacts[0].messages

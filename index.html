@@ -158,9 +158,11 @@
           >
             <i class="far fa-smile"></i>
             <input
+              v-model="newMessage"
               type="text"
               placeholder="Insert text here"
               class="badge-pill"
+              v-on:keyup.enter="sendMessage"
             />
             <i class="fas fa-microphone"></i>
           </div>
