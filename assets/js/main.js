@@ -8,7 +8,8 @@ const app = new Vue({
     el: "#boolz",
 
     data: {
-        currentContact: 0,
+        currentContact: "",
+        counter: 0,
         contacts: [
             {
                 name: 'Michele',
@@ -121,8 +122,11 @@ const app = new Vue({
     },
 
     methods: {
-        userSelector (index) {
-            return app.currentContact = index;
-        }
+        userSelector (user, index) {
+            app.counter = index;
+            app.currentContact = user;
+        },
+
     }
 })
+//contacts[0].messages
