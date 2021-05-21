@@ -104,7 +104,7 @@
             <input type="text" placeholder="cerca o inizia una nuova chat" class="search-input" />
           </div>
           <div class="contacts">
-            <div class="contact-me d-flex flex-row justify-content-start" v-for="(user, index) in contacts" @click="userSelector(user, index)">
+            <div class="contact-me d-flex flex-row justify-content-start" v-for="(user, index) in contacts" @click="userSelector(user), messageSelector(index)">
               <img :src="'./assets/img/'+ user.avatar +'.jpg'" alt="" class="contact-image">
               <h5>{{ user.name }}</h5>
             </div>
@@ -135,14 +135,14 @@
           </div>
           <div class="chat-container">
             <!-- insert chat here -->
-            <div class="bubble-container-sent" v-for="(message, index) in contacts">
-              <p class="chat-bubble-sent">{{index.text}}<br>
-                <span class="date">{{index.date}}</span>
+            <div class="bubble-container-sent" v-for="message in contacts[counter].messages" v-if="message.status == 'sent'" >
+              <p class="chat-bubble-sent">{{message.text}}<br>
+                <span class="date">{{message.date}}</span>
               </p>
             </div>
-            <div class="bubble-container-received">
-              <p class="chat-bubble-received">Sono una chat ricevuta <br>
-                <span class="date">data e ora qui</span>
+            <div class="bubble-container-received" v-else-if="message.status == 'received'">
+              <p class="chat-bubble-received">{{message.text}} <br>
+                <span class="date">{{message.date}}</span>
               </p>
             </div>
           </div>

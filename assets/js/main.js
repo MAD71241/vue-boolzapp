@@ -122,11 +122,12 @@ const app = new Vue({
     },
 
     methods: {
-        userSelector (user, index) {
-            app.counter = index;
-            app.currentContact = user;
+        userSelector (index) {
+            app.currentContact = index;
         },
-
+        messageSelector (index) {
+            app.counter = index;
+        }
     }
 })
 //contacts[0].messages
