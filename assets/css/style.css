@@ -81,13 +81,16 @@ body {
 }
 
 .contact-me h5 {
-    margin-left: 20px;
     margin-top: 10px;
 }
 
 
 .container .row {
     margin-top: 25px;
+}
+
+.last-message {
+    font-size: 12px;
 }
 
 .bell {

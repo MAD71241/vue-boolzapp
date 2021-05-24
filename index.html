@@ -107,9 +107,11 @@
           <div class="contacts">
             <div class="contact-me d-flex flex-row justify-content-start" v-for="(user, index) in searchList" @click="userSelector(user), messageSelector(index)">
               <img :src="'./assets/img/'+ user.avatar +'.jpg'" alt="" class="contact-image">
-              <h5>{{ user.name }}</h5>
-              <span>{{ user.messages[user.messages.length - 1].text }}</span>
-              <span>{{ user.messages[user.messages.length - 1].date }}</span>
+              <div class="user-container d-flex flex-column justify-content-start">
+                <h5>{{ user.name }}</h5>
+                <span class="last-message text-grey">{{ user.messages[user.messages.length - 1].text }}</span>
+                <span class="last-message text-grey">{{ user.messages[user.messages.length - 1].date }}</span>
+              </div>
             </div>
           </div>
         </div>
@@ -126,7 +128,7 @@
           <div class="chat-header bg-wagrey d-flex justify-content-between">
             <div class="chat-header-left d-flex justify-content-center align-items-center">
               <img :src="'./assets/img/' + contacts[counter].avatar + '.jpg'" alt="" class="contact-image">
-              <h5>{{counter.name}}</h5>
+              <h5>{{ contacts[counter].name }}</h5>
             </div>
             <div class="icon-container d-flex justify-content-center align-items-center text-grey">
               <i class="fas fa-search"></i>
