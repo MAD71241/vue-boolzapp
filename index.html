@@ -108,6 +108,8 @@
             <div class="contact-me d-flex flex-row justify-content-start" v-for="(user, index) in searchList" @click="userSelector(user), messageSelector(index)">
               <img :src="'./assets/img/'+ user.avatar +'.jpg'" alt="" class="contact-image">
               <h5>{{ user.name }}</h5>
+              <span>{{ user.messages[user.messages.length - 1].text }}</span>
+              <span>{{ user.messages[user.messages.length - 1].date }}</span>
             </div>
           </div>
         </div>
@@ -123,8 +125,8 @@
         >
           <div class="chat-header bg-wagrey d-flex justify-content-between">
             <div class="chat-header-left d-flex justify-content-center align-items-center">
-              <img :src="'./assets/img/' + currentContact.avatar + '.jpg'" alt="" class="contact-image">
-              <h5>{{currentContact.name}}</h5>
+              <img :src="'./assets/img/' + contacts[counter].avatar + '.jpg'" alt="" class="contact-image">
+              <h5>{{counter.name}}</h5>
             </div>
             <div class="icon-container d-flex justify-content-center align-items-center text-grey">
               <i class="fas fa-search"></i>
@@ -137,15 +139,25 @@
           <div class="chat-container">
             <!-- insert chat here -->
             <div class="bubble-container-sent" v-for="message in contacts[counter].messages" v-if="message.status == 'sent'" >
-              <p class="chat-bubble-sent">{{message.text}}<i class="fas fa-angle-down text-grey"></i><br>
+              <p class="chat-bubble-sent">{{message.text}}<i class="fas fa-angle-down text-grey popup-menu" @click="getMenu"></i>
+                <br>
                 <span class="date">{{message.date}}</span>
               </p>
+              <div v-bind:style="{display: clickedMenu}" class="menu">
+                <div class="info-button"><p>Info</p></div>
+                <div class="delete-button"><p>Delete message</p></div>
+              </div>
             </div>
             <div class="bubble-container-received" v-else-if="message.status == 'received'">
-              <p class="chat-bubble-received">{{message.text}} <br>
+              <p class="chat-bubble-received">{{message.text}}<i class="fas fa-angle-down text-grey popup-menu" @click="getMenu"></i><br>
                 <span class="date">{{message.date}}</span>
               </p>
+              <div v-bind:style="{display: clickedMenu}" class="menu">
+                <div class="info-button"><p>Info</p></div>
+                <div class="delete-button"><p>Delete message</p></div>
+              </div>
             </div>
+            
           </div>
           </div>
           <div

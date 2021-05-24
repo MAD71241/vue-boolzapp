@@ -61,7 +61,7 @@ body {
     display: inline;
 }
 
-.fa-angle-down {
+.chat-bubble-sent .fa-angle-down, .chat-bubble-received .fa-angle-down {
     display: none;
     position: absolute;
     padding-left: 5px;
@@ -200,11 +200,13 @@ body {
 .bubble-container-sent {
     display: flex;
     justify-content: flex-end;
+    position: relative;
 }
 
 .bubble-container-received {
     display: flex;
     justify-content: flex-start;
+    position: relative;
 }
 
 .chat-bubble-sent {
@@ -245,4 +247,32 @@ body {
     color: grey;
     display: inline-block;
     justify-self: flex-end;
+}
+
+.popup-menu:hover {
+    cursor: pointer;
+}
+
+.menu {
+    height: 80px;
+    width: 150px;
+    border-radius: 10px;
+    padding: 0 15px;
+    position: absolute;
+    background-color: white;
+    bottom: -15px;
+}
+
+.info-button, .delete-button {
+    width: 100%;
+    height: 20px;
+}
+
+.info-button:hover, .delete-button:hover {
+    background-color: lightgrey;
+    cursor: pointer;
+}
+
+.info-button p, .delete-button p {
+    margin: 10px 0;
 }

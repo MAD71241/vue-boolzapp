@@ -8,10 +8,12 @@ const app = new Vue({
     el: "#boolz",
 
     data: {
+        clickedMenu: "none",
         search: "",
         newMessage: "",
-        currentContact: "",
+        currentContact: 0,
         counter: 0,
+        thisMessage: 0,
         contacts: [
             {
                 name: 'Michele',
@@ -131,7 +133,6 @@ const app = new Vue({
             app.counter = index;
         },
         sendMessage() {
-            console.log("Sto funzionando");
             const mySentMessage = new Object();
             const today = new Date();
             var now = dayjs();
@@ -150,6 +151,14 @@ const app = new Vue({
             myReceivedMessage.text = "Ok";
             myReceivedMessage.status = "received";
             app.contacts[app.counter].messages.push(myReceivedMessage);
+        },
+        getMenu () {
+            //funzione menu a scomparsa
+            if (app.clickedMenu == "none") {
+                app.clickedMenu = "block";
+            } else {
+                app.clickedMenu = "none";
+            }
         }
 
     },
@@ -161,3 +170,5 @@ const app = new Vue({
         }
     }
 })
+//cancellare un messaggio
+/* app.tasks.splice(index, 1); */
