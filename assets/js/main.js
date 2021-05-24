@@ -8,12 +8,12 @@ const app = new Vue({
     el: "#boolz",
 
     data: {
+        thisMessageCounter: 0,
         clickedMenu: "none",
         search: "",
         newMessage: "",
         currentContact: 0,
         counter: 0,
-        thisMessage: 0,
         contacts: [
             {
                 name: 'Michele',
@@ -152,8 +152,10 @@ const app = new Vue({
             myReceivedMessage.status = "received";
             app.contacts[app.counter].messages.push(myReceivedMessage);
         },
-        getMenu () {
+        getMenu (index) {
+
             //funzione menu a scomparsa
+            this.thisMessageCounter = this.contacts[index].messages[index];
             if (app.clickedMenu == "none") {
                 app.clickedMenu = "block";
             } else {

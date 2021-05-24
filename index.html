@@ -141,7 +141,7 @@
           <div class="chat-container">
             <!-- insert chat here -->
             <div class="bubble-container-sent" v-for="message in contacts[counter].messages" v-if="message.status == 'sent'" >
-              <p class="chat-bubble-sent">{{message.text}}<i class="fas fa-angle-down text-grey popup-menu" @click="getMenu"></i>
+              <p class="chat-bubble-sent">{{message.text}}<i class="fas fa-angle-down text-grey popup-menu" @click="getMenu(counter)" :data-message="thisMessageCounter"></i>
                 <br>
                 <span class="date">{{message.date}}</span>
               </p>
