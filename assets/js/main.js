@@ -8,8 +8,9 @@ const app = new Vue({
     el: "#boolz",
 
     data: {
-        thisMessageCounter: 0,
-        clickedMenu: "none",
+        isHidden: true,
+        isActive: false,
+        thisMessage: false,
         search: "",
         newMessage: "",
         currentContact: 0,
@@ -135,7 +136,7 @@ const app = new Vue({
         sendMessage() {
             const mySentMessage = new Object();
             const today = new Date();
-            var now = dayjs();
+            var now = dayjs().format('DD/MM/YYYY HH:mm:ss');
             mySentMessage.date = now;
             mySentMessage.text = app.newMessage;
             mySentMessage.status = "sent";
@@ -146,21 +147,20 @@ const app = new Vue({
         autoReply() {
             const myReceivedMessage = new Object();
             const today = new Date();
-            var now = dayjs();
+            var now = dayjs().format('DD/MM/YYYY HH:mm:ss');
             myReceivedMessage.date = now;
             myReceivedMessage.text = "Ok";
             myReceivedMessage.status = "received";
             app.contacts[app.counter].messages.push(myReceivedMessage);
         },
-        getMenu (index) {
-
+        getMenu() {
             //funzione menu a scomparsa
-            this.thisMessageCounter = this.contacts[index].messages[index];
-            if (app.clickedMenu == "none") {
-                app.clickedMenu = "block";
+            if (this.thisMessage == false) {
+                this.thisMessage = true
             } else {
-                app.clickedMenu = "none";
+                this.thisMessage = false
             }
+
         }
 
     },
@@ -171,6 +171,11 @@ const app = new Vue({
             })
         }
     }
+
 })
 //cancellare un messaggio
 /* app.tasks.splice(index, 1); */
+
+//attivare messaggio
+/* this.isActive = !this.isActive;
+this.activeitem = item.name */
