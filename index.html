@@ -141,20 +141,20 @@
           <div class="chat-container">
             <!-- insert chat here -->
             <div class="bubble-container-sent" v-for="(message, index) in contacts[counter].messages" v-if="message.status == 'sent'" >
-              <p class="chat-bubble-sent">{{message.text}}<i class="fas fa-angle-down text-grey popup-menu" @click="getMenu(index)"></i>
+              <p class="chat-bubble-sent">{{message.text}}<i class="fas fa-angle-down text-grey popup-menu" @click="SelectItem(message)"></i>
                 <br>
                 <span class="date">{{message.date}} {{ index }}</span>
               </p>
-              <div class="menu" v-show="thisMessage">
+              <div class="menu" v-show="selectedMessage.isActive">
                 <div class="info-button"><p>Info</p></div>
                 <div class="delete-button"><p>Delete message</p></div>
               </div>
             </div>
             <div class="bubble-container-received" v-else-if="message.status == 'received'">
-              <p class="chat-bubble-received">{{message.text}}<i class="fas fa-angle-down text-grey popup-menu" @click="getMenu(index)"></i><br>
+              <p class="chat-bubble-received">{{message.text}}<i class="fas fa-angle-down text-grey popup-menu" @click="SelectItem(message)"></i><br>
                 <span class="date">{{message.date}} {{ index }}</span>
               </p>
-              <div class="menu" v-show="thisMessage">
+              <div class="menu" v-show="selectedMessage.isActive">
                 <div class="info-button"><p>Info</p></div>
                 <div class="delete-button"><p>Delete message</p></div>
               </div>

@@ -8,9 +8,7 @@ const app = new Vue({
     el: "#boolz",
 
     data: {
-        isHidden: true,
-        isActive: false,
-        thisMessage: false,
+        selectedMessage: "",
         search: "",
         newMessage: "",
         currentContact: 0,
@@ -24,17 +22,20 @@ const app = new Vue({
                     {
                         date: '10/01/2020 15:30:55',
                         text: 'Hai portato a spasso il cane?',
-                        status: 'sent'
+                        status: 'sent',
+                        isActive: false,
                     },
                     {
                         date: '10/01/2020 15:50:00',
                         text: 'Ricordati di dargli da mangiare',
-                        status: 'sent'
+                        status: 'sent',
+                        isActive: false,
                     },
                     {
                         date: '10/01/2020 16:15:22',
                         text: 'Tutto fatto!',
-                        status: 'received'
+                        status: 'received',
+                        isActive: false,
                     }
                 ],
             },
@@ -153,7 +154,7 @@ const app = new Vue({
             myReceivedMessage.status = "received";
             app.contacts[app.counter].messages.push(myReceivedMessage);
         },
-        getMenu() {
+        getMenu(index) {
             //funzione menu a scomparsa
             if (this.thisMessage == false) {
                 this.thisMessage = true
@@ -161,6 +162,15 @@ const app = new Vue({
                 this.thisMessage = false
             }
 
+        },
+        //seleziona messaggio clickato
+        SelectItem(message){
+            this.selectedMessage = message
+            if (this.selectedMessage.isActive == false) {
+                this.selectedMessage.isActive = true
+            } else {
+                this.selectedMessage.isActive = false
+            }
         }
 
     },
