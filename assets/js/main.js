@@ -8,7 +8,6 @@ const app = new Vue({
     el: "#boolz",
 
     data: {
-        selectedMessage: "",
         search: "",
         newMessage: "",
         currentContact: 0,
@@ -24,18 +23,21 @@ const app = new Vue({
                         text: 'Hai portato a spasso il cane?',
                         status: 'sent',
                         isActive: false,
+                        indice: ""
                     },
                     {
                         date: '10/01/2020 15:50:00',
                         text: 'Ricordati di dargli da mangiare',
                         status: 'sent',
                         isActive: false,
+                        indice: ""
                     },
                     {
                         date: '10/01/2020 16:15:22',
                         text: 'Tutto fatto!',
                         status: 'received',
                         isActive: false,
+                        indice: ""
                     }
                 ],
             },
@@ -70,17 +72,20 @@ const app = new Vue({
                     {
                         date: '28/03/2020 10:10:40',
                         text: 'La Marianna va in campagna',
-                        status: 'received'
+                        status: 'received',
+                        
                     },
                     {
                         date: '28/03/2020 10:20:10',
                         text: 'Sicuro di non aver sbagliato chat?',
-                        status: 'sent'
+                        status: 'sent',
+                        
                     },
                     {
                         date: '28/03/2020 16:15:22',
                         text: 'Ah scusa!',
-                        status: 'received'
+                        status: 'received',
+                        
                     }
                 ],
             },
@@ -154,22 +159,13 @@ const app = new Vue({
             myReceivedMessage.status = "received";
             app.contacts[app.counter].messages.push(myReceivedMessage);
         },
-        getMenu(index) {
-            //funzione menu a scomparsa
-            if (this.thisMessage == false) {
-                this.thisMessage = true
+        /* apertura e chiusura menu a tendina */
+        SelectItem(message, index){
+            message.indice = index
+            if (message.indice == index && message.isActive == false) {
+                message.isActive = true;
             } else {
-                this.thisMessage = false
-            }
-
-        },
-        //seleziona messaggio clickato
-        SelectItem(message){
-            this.selectedMessage = message
-            if (this.selectedMessage.isActive == false) {
-                this.selectedMessage.isActive = true
-            } else {
-                this.selectedMessage.isActive = false
+                message.isActive = false;
             }
         }
 
@@ -189,3 +185,9 @@ const app = new Vue({
 //attivare messaggio
 /* this.isActive = !this.isActive;
 this.activeitem = item.name */
+
+
+//activeMessage : {
+    //salvare valori da utilizzare per decidere se mostrare o meno il menu
+    //per questo elemento. Corrispondenza tra messaggio attivo ed il suo status, 
+    //in base a quello decidere se mostrare o meno il menu opzioni con un v-if
