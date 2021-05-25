@@ -1,3 +1,5 @@
+/* REGOLE DI STILE GENERALI */
+
 body {
     width: 100%;
     height: 100%;
@@ -17,7 +19,8 @@ body {
 }
 
 .text-waocean {
-    color: #8EDAFC;;
+    color: #8EDAFC;
+    ;
 }
 
 .bg-wagrey {
@@ -36,6 +39,14 @@ body {
     background-color: #009688;
 }
 
+.popup-menu:hover {
+    cursor: pointer;
+}
+
+/**************************** STILE HEADER ******************************/
+
+/* Header */
+
 .header {
     position: fixed;
     top: 0;
@@ -44,79 +55,7 @@ body {
     width: 100%;
 }
 
-.sidebar-header-left {
-    margin-left: 15px;
-}
-
-.sidebar-header-right, .icon-container {
-    margin-right: 15px;
-    font-size: 20px;
-}
-
-.sidebar-header-right .fas, .sidebar-header-right .far, .icon-container .fas, .icon-container .far {
-    padding: 0 10px;
-}
-
-.chat-bubble-received:hover .fa-angle-down, .chat-bubble-sent:hover .fa-angle-down {
-    display: inline;
-}
-
-.chat-bubble-sent .fa-angle-down, .chat-bubble-received .fa-angle-down {
-    display: none;
-    position: absolute;
-    padding-left: 5px;
-    top: 0;
-    right: 5px;
-}
-
-.user-avatar, .contact-image  {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-}
-
-.contact-image {
-    align-self: center;
-    margin-left: 15px;
-}
-
-.contact-me h5 {
-    margin-top: 10px;
-}
-
-
-.container .row {
-    margin-top: 25px;
-}
-
-.last-message {
-    font-size: 12px;
-}
-
-.bell {
-    background-color: white;
-    font-size: 20px;
-    margin-left: 15px;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px
-}
-
-.activate-notifications {
-    width: 80%;
-}
-
-.activate-notifications h6 {
-    margin-bottom: 0;
-}
-
-.activate-notifications span {
-    text-decoration: underline;
-}
-
-.activate-notifications span:hover {
-    cursor: pointer;
-}
+/* Sidebar e searchbox */
 
 .sidebar {
     background-color: white;
@@ -152,7 +91,40 @@ body {
     padding-left: 35px;
 }
 
-/* Regole Chatbox */
+.sidebar-header-left {
+    margin-left: 15px;
+}
+
+.sidebar-header-right, .icon-container {
+    margin-right: 15px;
+    font-size: 20px;
+}
+
+.sidebar-header-right .fas, .sidebar-header-right .far, .icon-container .fas, .icon-container .far {
+    padding: 0 10px;
+}
+
+/* Sezione attiva notifiche */
+
+.activate-notifications {
+    width: 80%;
+}
+
+.activate-notifications h6 {
+    margin-bottom: 0;
+}
+
+.activate-notifications span {
+    text-decoration: underline;
+}
+
+.activate-notifications span:hover {
+    cursor: pointer;
+}
+
+/* *********************************** MAIN SECTION */
+
+/* Chatbox */
 
 .chat-header, .sidebar-header {
     height: 100px;
@@ -198,6 +170,50 @@ body {
     background-image: url(../img/mine.jpg);
     padding: 25px;
     position: relative;
+}
+
+.chat-bubble-received:hover .fa-angle-down, .chat-bubble-sent:hover .fa-angle-down {
+    display: inline;
+}
+
+.chat-bubble-sent .fa-angle-down, .chat-bubble-received .fa-angle-down {
+    display: none;
+    position: absolute;
+    padding-left: 5px;
+    top: 0;
+    right: 5px;
+}
+
+.user-avatar, .contact-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.contact-image {
+    align-self: center;
+    margin-left: 15px;
+}
+
+.contact-me h5 {
+    margin-top: 10px;
+}
+
+.container .row {
+    margin-top: 25px;
+}
+
+.last-message {
+    font-size: 12px;
+}
+
+.bell {
+    background-color: white;
+    font-size: 20px;
+    margin-left: 15px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px
 }
 
 .bubble-container-sent {
@@ -252,9 +268,7 @@ body {
     justify-self: flex-end;
 }
 
-.popup-menu:hover {
-    cursor: pointer;
-}
+/* Menu informazioni messaggio */
 
 .menu {
     height: 80px;

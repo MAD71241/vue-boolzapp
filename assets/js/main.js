@@ -160,6 +160,7 @@ const app = new Vue({
         messageSelector(index) {
             app.counter = index;
         },
+        /* funzione invio messaggio */
         sendMessage() {
             const mySentMessage = new Object()
             const today = new Date()
@@ -173,6 +174,8 @@ const app = new Vue({
             app.newMessage = ""
             setTimeout(app.autoReply, 1000)
         },
+
+        /* funzione per risposta automatica */
         autoReply() {
             const myReceivedMessage = new Object()
             const today = new Date()
@@ -204,6 +207,7 @@ const app = new Vue({
         }
 
     },
+    /* filtro in tempo reale dei contatti */
     computed: {
         searchList() {
             return this.contacts.filter(contact => {
@@ -213,15 +217,3 @@ const app = new Vue({
     }
 
 })
-//cancellare un messaggio
-/* app.tasks.splice(index, 1); */
-
-//attivare messaggio
-/* this.isActive = !this.isActive;
-this.activeitem = item.name */
-
-
-//activeMessage : {
-    //salvare valori da utilizzare per decidere se mostrare o meno il menu
-    //per questo elemento. Corrispondenza tra messaggio attivo ed il suo status, 
-    //in base a quello decidere se mostrare o meno il menu opzioni con un v-if
