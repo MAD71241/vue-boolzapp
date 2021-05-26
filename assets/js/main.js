@@ -225,11 +225,13 @@ const app = new Vue({
         /* funzione per ricercare un messaggio nella chat */
         searchMessage(index) {
             return app.contacts[index].messages.filter(message => {
-                /* visualizza valore booleano per il messaggio che contiene il valore ricercato */
-                console.log(message.text.toLowerCase().includes(app.textSearch.toLowerCase()));
+                if (message.text.toLowerCase().includes(app.textSearch.toLowerCase())) {
+                    message.isHighlighted = true
+                } else {
+                    message.isHighlighted = false
+                }
             })
         }
-
     },
     /* filtro in tempo reale dei contatti */
     computed: {

@@ -44,7 +44,8 @@ body {
 }
 
 .highlight {
-    background-color: red;
+    color: red;
+    font-weight: bold;
 }
 
 /**************************** STILE HEADER ******************************/
