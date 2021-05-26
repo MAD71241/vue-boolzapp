@@ -9,6 +9,7 @@ const app = new Vue({
 
     data: {
         search: "",
+        textSearch: "",
         newMessage: "",
         currentContact: 0,
         counter: 0,
@@ -23,21 +24,24 @@ const app = new Vue({
                         text: 'Hai portato a spasso il cane?',
                         status: 'sent',
                         isActive: false,
-                        indice: ""
+                        indice: "",
+                        isHighlighted: false
                     },
                     {
                         date: '10/01/2020 15:50:00',
                         text: 'Ricordati di dargli da mangiare',
                         status: 'sent',
                         isActive: false,
-                        indice: ""
+                        indice: "",
+                        isHighlighted: false
                     },
                     {
                         date: '10/01/2020 16:15:22',
                         text: 'Tutto fatto!',
                         status: 'received',
                         isActive: false,
-                        indice: ""
+                        indice: "",
+                        isHighlighted: false
                     }
                 ],
             },
@@ -51,14 +55,16 @@ const app = new Vue({
                         text: 'Ciao come stai?',
                         status: 'sent',
                         isActive: false,
-                        indice: ""
+                        indice: "",
+                        isHighlighted: false
                     },
                     {
                         date: '20/03/2020 16:30:55',
                         text: 'Bene grazie! Stasera ci vediamo?',
                         status: 'received',
                         isActive: false,
-                        indice: ""
+                        indice: "",
+                        isHighlighted: false
                     },
                     {
                         date: '20/03/2020 16:35:00',
@@ -66,6 +72,7 @@ const app = new Vue({
                         status: 'sent',
                         isActive: false,
                         indice: "",
+                        isHighlighted: false
                     }
                 ],
             },
@@ -81,6 +88,7 @@ const app = new Vue({
                         status: 'received',
                         isActive: false,
                         indice: "",
+                        isHighlighted: false
 
                     },
                     {
@@ -89,6 +97,7 @@ const app = new Vue({
                         status: 'sent',
                         isActive: false,
                         indice: "",
+                        isHighlighted: false
 
                     },
                     {
@@ -96,7 +105,8 @@ const app = new Vue({
                         text: 'Ah scusa!',
                         status: 'received',
                         isActive: false,
-                        indice: ""
+                        indice: "",
+                        isHighlighted: false
                     }
                 ],
             },
@@ -110,14 +120,16 @@ const app = new Vue({
                         text: 'Lo sai che ha aperto una nuova pizzeria?',
                         status: 'sent',
                         isActive: false,
-                        indice: ""
+                        indice: "",
+                        isHighlighted: false
                     },
                     {
                         date: '10/01/2020 15:50:00',
                         text: 'Si, ma preferirei andare al cinema',
                         status: 'received',
                         isActive: false,
-                        indice: ""
+                        indice: "",
+                        isHighlighted: false
                     }
                 ],
             },
@@ -131,21 +143,24 @@ const app = new Vue({
                         text: 'Hai portato a spasso il cane?',
                         status: 'sent',
                         isActive: false,
-                        indice: ""
+                        indice: "",
+                        isHighlighted: false
                     },
                     {
                         date: '10/01/2020 15:50:00',
                         text: 'Ricordati di dargli da mangiare',
                         status: 'sent',
                         isActive: false,
-                        indice: ""
+                        indice: "",
+                        isHighlighted: false
                     },
                     {
                         date: '10/01/2020 16:15:22',
                         text: 'Tutto fatto!',
                         status: 'received',
                         isActive: false,
-                        indice: ""
+                        indice: "",
+                        isHighlighted: false
                     }
                 ],
             }
@@ -170,6 +185,7 @@ const app = new Vue({
             mySentMessage.status = "sent"
             mySentMessage.isActive = false
             mySentMessage.indice = ""
+            mySentMessage.isHighlighted = false
             app.contacts[app.counter].messages.push(mySentMessage)
             app.newMessage = ""
             setTimeout(app.autoReply, 1000)
@@ -183,8 +199,9 @@ const app = new Vue({
             myReceivedMessage.date = now
             myReceivedMessage.text = "Ok"
             myReceivedMessage.status = "received"
-            mySentMessage.isActive = false
-            mySentMessage.indice = ""
+            myReceivedMessage.isActive = false
+            myReceivedMessage.indice = ""
+            myReceivedMessage.isHighlighted = false
             app.contacts[app.counter].messages.push(myReceivedMessage)
         },
         /* apertura e chiusura menu a tendina */
@@ -204,6 +221,13 @@ const app = new Vue({
                 activeMessages.splice(index, 1)
             }
 
+        },
+        /* funzione per ricercare un messaggio nella chat */
+        searchMessage(index) {
+            return app.contacts[index].messages.filter(message => {
+                /* visualizza valore booleano per il messaggio che contiene il valore ricercato */
+                console.log(message.text.toLowerCase().includes(app.textSearch.toLowerCase()));
+            })
         }
 
     },

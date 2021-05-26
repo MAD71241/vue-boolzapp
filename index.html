@@ -128,13 +128,17 @@
           <div class="chat-header bg-wagrey d-flex justify-content-between">
             <div class="chat-header-left d-flex justify-content-center align-items-center">
               <img :src="'./assets/img/' + contacts[counter].avatar + '.jpg'" alt="" class="contact-image">
-              <h5>{{ contacts[counter].name }}</h5>
+              <div class="user d-flex flex-column">
+                <h5>{{ contacts[counter].name }}</h5>
+                <h6 class="text-grey">Ultimo accesso il giorno: {{ contacts[counter].messages[contacts[counter].messages.length - 1].date }}</h6>
+              </div>
             </div>
             <div class="icon-container d-flex justify-content-center align-items-center text-grey">
-              <i class="fas fa-search"></i>
+              <i class="fas fa-search">
+                <input type="text" placeholder="cerca messaggio" v-model="textSearch" v-on:keyup.enter="searchMessage(counter)" >
+              </i>
               <i class="fas fa-paperclip"></i>
               <i class="fas fa-ellipsis-v"></i>
-              
             </div>
 
           </div>
@@ -151,7 +155,7 @@
               </div>
             </div>
             <div class="bubble-container-received" v-else-if="message.status == 'received'">
-              <p class="chat-bubble-received">{{message.text}}<i class="fas fa-angle-down text-grey popup-menu" @click="SelectItem(message, index)"></i><br>
+              <p class="chat-bubble-received" :class="{ highlight: message.isHighlighted }">{{message.text}}<i class="fas fa-angle-down text-grey popup-menu" @click="SelectItem(message, index)"></i><br>
                 <span class="date">{{message.date}}</span>
               </p>
               <div class="menu" v-show="message.isActive">
