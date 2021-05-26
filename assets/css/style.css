@@ -109,6 +109,14 @@ body {
     padding: 0 10px;
 }
 
+.fa-search::before {
+    padding-right: 10px;
+}
+
+.search-message {
+    font: 400 16px Arial;
+}
+
 /* Sezione attiva notifiche */
 
 .activate-notifications {
