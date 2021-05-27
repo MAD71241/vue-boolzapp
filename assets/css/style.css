@@ -298,6 +298,7 @@ body {
     box-shadow: 5px 3px 20px 0px rgba(0, 0, 0, 0.4);
     -webkit-box-shadow: 5px 3px 20px 0px rgba(0, 0, 0, 0.4);
     -moz-box-shadow: 5px 3px 20px 0px rgba(0, 0, 0, 0.4);
+    z-index: 1;
 }
 
 .info-button, .delete-button {
