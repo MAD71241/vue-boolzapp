@@ -295,6 +295,9 @@ body {
     position: absolute;
     background-color: white;
     bottom: -15px;
+    box-shadow: 5px 3px 20px 0px rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow: 5px 3px 20px 0px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 5px 3px 20px 0px rgba(0, 0, 0, 0.4);
 }
 
 .info-button, .delete-button {
